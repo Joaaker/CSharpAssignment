@@ -1,10 +1,11 @@
 ﻿using System.Diagnostics;
 using System.Text.Json;
+using Shared.Interface;
 using Shared.Models;
 
 namespace Shared.Services;
 
-public class FileService
+public class FileService : IFileService
 {
     private readonly string _directoryPath;
     private readonly string _filePath;

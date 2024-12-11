@@ -1,15 +1,21 @@
 ﻿using Shared.Models;
 using Shared.Factories;
 using Shared.Services;
+using Shared.Interface;
 
-namespace ContactConsole.Services;
+namespace ContactConsole.Dialogs;
 
-public class MenuService
+public class MenuDialog
 {
-    private readonly FileService _fileService;
-    public MenuService()
+    // Ny kod: Vi tar nu in IContactService istället för IFileService.
+    // Det gör att denna klass inte behöver känna till filhanteringen.
+    private readonly IContactService _contactService;
+
+    // Ny kod: Konstruktor injicerar IContactService.
+    // MenuService vet nu bara om kontaktlogik och inte om filoperationer.
+    public MenuDialog(IContactService contactService)
     {
-        _fileService = new FileService();
+        _contactService = contactService;
     }
 
     public void ShowMenu()
@@ -67,21 +73,23 @@ public class MenuService
         Console.Write("Enter a phone number: ");
         var phoneNumber = Console.ReadLine()!;
 
-
-        var newcontact = ContactFactory.CreateContact(firstName, lastName, email, phoneNumber);
-
-        var contacts = _fileService.ReadContactsFromFile();
-        contacts.Add(newcontact);
-        _fileService.SaveContactsToFile(contacts);
-
-        Console.WriteLine("contact added successfully!");
-
+        try
+        {
+            var newContact = ContactFactory.CreateContact(firstName, lastName, email, phoneNumber);
+            _contactService.AddContact(newContact);
+            Console.WriteLine("contact added successfully!");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
     }
 
     private void ShowContactList()
     {
         Console.Clear();
-        var contacts = _fileService.ReadContactsFromFile();
+        var contacts = _contactService.GetAllContacts();
+
 
         if (contacts == null || contacts.Count == 0)
         {
@@ -102,25 +110,28 @@ public class MenuService
 
     private void GetContactByID()
     {
-        var contacts = _fileService.ReadContactsFromFile();
         Console.Write("Enter contact ID:");
         var input = Console.ReadLine()!;
+
         if (input == null)
         {
             Console.WriteLine("Input cannot be empty");
         }
         else
         {
-            foreach (var contact in contacts)
+            try
             {
-                if (contact.Id == input)
-                {
-                    Console.Write($"ID: {contact.Id}");
-                    Console.Write($"First name: {contact.FirstName}, Last name: {contact.LastName}");
-                    Console.Write($"Email: {contact.Email}, Phone number: {contact.PhoneNumber}");
-                    Console.Write($"Date created: {contact.DateCreated}");
-                    Console.WriteLine("");
-                }
+                // Ny kod: Anropar contactService direkt istället för att loopa igenom kontakter.
+                // ContactService returnerar antingen en kontakt eller kastar ett undantag.
+                var contact = _contactService.GetContactById(input);
+                Console.WriteLine($"ID: {contact.Id}");
+                Console.WriteLine($"First name: {contact.FirstName}, Last name: {contact.LastName}");
+                Console.WriteLine($"Email: {contact.Email}, Phone number: {contact.PhoneNumber}");
+                Console.WriteLine($"Date created: {contact.DateCreated}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
     }
