@@ -57,8 +57,16 @@ public class ContactService(IContactRepository contactRepository) : IContactServ
 
     public IEnumerable<ContactObjects>? GetAllContacts()
     {
-        _contacts = contactRepository.GetContacts() ?? [];
-        return _contacts;
+        try
+        {
+            _contacts = contactRepository.GetContacts() ?? [];
+            return _contacts;
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine(ex.Message);
+            return null;
+        }
     }
 
     //Redigera en kontakt 

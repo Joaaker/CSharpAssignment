@@ -2,7 +2,7 @@
 using Shared.Interface;
 using Shared.Services;
 
-namespace Shared.Tests.Services;
+namespace Shared_Tests.Services;
 
 public class FileService_Tests
 {

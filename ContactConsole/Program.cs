@@ -1,4 +1,4 @@
-﻿using ContactConsole.Dialogs;
+﻿using ContactConsoleApp.Dialogs;
 using Shared.Services;
 using Shared.Interface;
 using Shared.Repositories;

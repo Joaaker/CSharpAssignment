@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shared.Tests.Models
+namespace Shared_Tests.Models
 {
     internal class ContactObjects_Tests
     {

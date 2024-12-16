@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactConsoleApp", "Contac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{6FCD82D1-6DD1-4715-A57E-1C07148B1039}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Tests", "Shared.Tests\Shared.Tests.csproj", "{341E9599-B3B8-4A0C-9645-C7479D839B50}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared_Tests", "Shared.Tests\Shared_Tests.csproj", "{341E9599-B3B8-4A0C-9645-C7479D839B50}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiContactApp", "MauiContactApp\MauiContactApp.csproj", "{3942FED2-7E9D-4B4E-93F9-54053AC60C74}"
 EndProject

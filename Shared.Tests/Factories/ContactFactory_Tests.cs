@@ -1,7 +1,7 @@
 ﻿using Shared.Factories;
 using Shared.Models;
 
-namespace Shared.Tests.Factories;
+namespace Shared_Tests.Factories;
 
 public class ContactFactory_Tests
 

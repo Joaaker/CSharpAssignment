@@ -1,7 +1,7 @@
 ﻿using Shared.Helpers;
 
 
-namespace Shared.Tests.Helpers;
+namespace Shared_Tests.Helpers;
 
 public class UniqueIdentifierGenerator_Tests
 {

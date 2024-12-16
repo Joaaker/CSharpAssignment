@@ -4,20 +4,11 @@ using Shared.Services;
 using Shared.Interface;
 using System.Data;
 
-namespace ContactConsole.Dialogs;
+namespace ContactConsoleApp.Dialogs;
 
-public class MenuDialog
+public class MenuDialog(IContactService contactService)
 {
-    // Ny kod: Vi tar nu in IContactService istället för IFileService.
-    // Det gör att denna klass inte behöver känna till filhanteringen.
-    private readonly IContactService _contactService;
-
-    // Ny kod: Konstruktor injicerar IContactService.
-    // MenuService vet nu bara om kontaktlogik och inte om filoperationer.
-    public MenuDialog(IContactService contactService)
-    {
-        _contactService = contactService;
-    }
+    private readonly IContactService _contactService = contactService;
 
     public void ShowMenu()
     {
@@ -122,8 +113,6 @@ public class MenuDialog
         {
             try
             {
-                // Ny kod: Anropar contactService direkt istället för att loopa igenom kontakter.
-                // ContactService returnerar antingen en kontakt eller kastar ett undantag.
                 var contact = _contactService.GetContactById(input);
                 Console.WriteLine($"ID: {contact.Id}");
                 Console.WriteLine($"First name: {contact.FirstName}, Last name: {contact.LastName}");
