@@ -3,7 +3,7 @@ using Shared.Models;
 
 namespace Shared.Factories;
 
-public class ContactFactory
+public static class ContactFactory
 {
     public static ContactObjects CreateContact(string firstName, string lastName, string email, string phoneNumber)
     {

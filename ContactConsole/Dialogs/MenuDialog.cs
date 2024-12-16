@@ -2,6 +2,7 @@
 using Shared.Factories;
 using Shared.Services;
 using Shared.Interface;
+using System.Data;
 
 namespace ContactConsole.Dialogs;
 
@@ -91,7 +92,7 @@ public class MenuDialog
         var contacts = _contactService.GetAllContacts();
 
 
-        if (contacts == null || contacts.Count == 0)
+        if (contacts == null)
         {
             Console.WriteLine("No contacts found");
         }
@@ -138,6 +139,7 @@ public class MenuDialog
 
     private void ExitOption()
     {
+        Console.Clear();
         Console.Write("Are you sure you want to exit this application? (y/n): ");
         var option = Console.ReadLine()!;
 

@@ -1,9 +1,7 @@
-﻿using Shared.Models;
-
-namespace Shared.Interface;
+﻿namespace Shared.Interface;
 
 public interface IFileService
 {
-    void SaveContactsToFile(List<ContactObjects> contactList);
-    List<ContactObjects> ReadContactsFromFile();
+    bool SaveContentToFile(string content);
+    string GetContentFromFile();
 }

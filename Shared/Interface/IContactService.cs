@@ -4,9 +4,9 @@ namespace Shared.Interface;
 
 public interface IContactService
 {
-    void AddContact(ContactObjects contact);
+    bool AddContact(ContactObjects contact);
     ContactObjects GetContactById(string id);
-    List<ContactObjects> GetAllContacts();
+    IEnumerable<ContactObjects>? GetAllContacts();
 
     //Redigera en kontakt 
 
