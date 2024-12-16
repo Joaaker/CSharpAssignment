@@ -1,5 +1,4 @@
 ﻿
-
 namespace Shared.Tests.Factories;
 
 public class ContactFactory_Tests
