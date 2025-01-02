@@ -14,11 +14,14 @@ public class ContactFactory_Tests
         // Arrange
         string firstName = "John";
         string lastName = "Doe";
-        string email = "john.doe@example.com";
+        string email = "john.doe@domain.com";
         string phoneNumber = "1234567890";
+        string address = "Street 1";
+        string zipCode = "123 45";
+        string city = "City";
 
         // Act
-        ContactObjects contact = ContactFactory.CreateContact(firstName, lastName, email, phoneNumber);
+        ContactObjects contact = ContactFactory.CreateContact(firstName, lastName, email, phoneNumber, address, zipCode, city);
 
         // Assert
         Assert.NotNull(contact);
@@ -27,6 +30,9 @@ public class ContactFactory_Tests
         Assert.Equal(lastName, contact.LastName);
         Assert.Equal(email, contact.Email);
         Assert.Equal(phoneNumber, contact.PhoneNumber);
+        Assert.Equal(address, contact.Address);
+        Assert.Equal(zipCode, contact.ZipCode);
+        Assert.Equal(city, contact.City);
         Assert.True(contact.DateCreated <= DateTime.Now);
     }
 }

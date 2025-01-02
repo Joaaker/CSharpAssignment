@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileContactApp.Pages.EditContactPage"
+             
+             xmlns:viewmodels="clr-namespace:MobileContactApp.ViewModels"
+             x:DataType="{x:Type viewmodels:EditContactViewModel}"
+            
+             Title="EditContactPage">
+    <ScrollView>
+        <Grid RowDefinitions="*">
+            <Button Text="Go to contact list" Command="{Binding NavigateToMainPageCommand}"/>
+        </Grid>
+    </ScrollView>
+</ContentPage>

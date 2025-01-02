@@ -1,6 +1,5 @@
 ﻿using Moq;
 using Shared.Interface;
-using Shared.Services;
 
 namespace Shared_Tests.Services;
 
@@ -37,5 +36,6 @@ public class FileService_Tests
 
         // assert
         Assert.Equal("test", result);
+        Assert.NotNull(result);
     }
 }

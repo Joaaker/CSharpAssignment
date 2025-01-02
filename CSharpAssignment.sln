@@ -9,7 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared_Tests", "Shared.Tests\Shared_Tests.csproj", "{341E9599-B3B8-4A0C-9645-C7479D839B50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiContactApp", "MauiContactApp\MauiContactApp.csproj", "{3942FED2-7E9D-4B4E-93F9-54053AC60C74}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileContactApp", "MobileContactApp\MobileContactApp.csproj", "{B4AC4662-EFDA-4CC2-AAA8-E29B6088392E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6FCD82D1-6DD1-4715-A57E-1C07148B1039} = {6FCD82D1-6DD1-4715-A57E-1C07148B1039}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,11 +32,11 @@ Global
 		{341E9599-B3B8-4A0C-9645-C7479D839B50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{341E9599-B3B8-4A0C-9645-C7479D839B50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{341E9599-B3B8-4A0C-9645-C7479D839B50}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3942FED2-7E9D-4B4E-93F9-54053AC60C74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3942FED2-7E9D-4B4E-93F9-54053AC60C74}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3942FED2-7E9D-4B4E-93F9-54053AC60C74}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{3942FED2-7E9D-4B4E-93F9-54053AC60C74}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3942FED2-7E9D-4B4E-93F9-54053AC60C74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4AC4662-EFDA-4CC2-AAA8-E29B6088392E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4AC4662-EFDA-4CC2-AAA8-E29B6088392E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4AC4662-EFDA-4CC2-AAA8-E29B6088392E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B4AC4662-EFDA-4CC2-AAA8-E29B6088392E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4AC4662-EFDA-4CC2-AAA8-E29B6088392E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

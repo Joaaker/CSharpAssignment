@@ -29,7 +29,7 @@ public class FileService(string directoryPath = "Data", string filePath = "list.
         }
     }
 
-    public string GetContentFromFile()
+    public string? GetContentFromFile()
     {
         try
         {

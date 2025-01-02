@@ -23,8 +23,8 @@ public class ContactRepository_Tests
         // arange
         var contacts = new List<ContactObjects>
         {
-            new("abcd1234", "Pelle", "Svanslös", "pelle@domain.com", "123456789"),
-            new("1234abcd", "Lille", "Skutt", "skutt@domain.com", "987654321")
+            new("abcd1234", "Pelle", "Svanslös", "pelle@domain.com", "123456789", "Gatan 1", "123 45", "Stockholm"),
+            new("1234abcd", "Lille", "Skutt", "skutt@domain.com", "987654321", "Vägen 1", "54 321", "Göteborg")
         };
         var jsonData = JsonSerializer.Serialize(contacts);
         _fileServiceMock.Setup(fs => fs.GetContentFromFile()).Returns(jsonData);
@@ -44,8 +44,8 @@ public class ContactRepository_Tests
         // arrange
         var contacts = new List<ContactObjects>
         {
-            new("abcd1234", "Pelle", "Svanslös", "pelle@domain.com", "123456789"),
-            new("1234abcd", "Lille", "Skutt", "skutt@domain.com", "987654321")
+            new("abcd1234", "Pelle", "Svanslös", "pelle@domain.com", "123456789", "Gatan 1", "123 45", "Stockholm"),
+            new("1234abcd", "Lille", "Skutt", "skutt@domain.com", "987654321", "Vägen 1", "54 321", "Göteborg")
         };
         _fileServiceMock.Setup(fs => fs.SaveContentToFile(It.IsAny<string>())).Returns(true);
 

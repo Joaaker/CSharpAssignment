@@ -3,5 +3,5 @@
 public interface IFileService
 {
     bool SaveContentToFile(string content);
-    string GetContentFromFile();
+    string? GetContentFromFile();
 }

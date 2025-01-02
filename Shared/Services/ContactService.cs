@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics;
-using System.Reflection.Metadata.Ecma335;
 using Shared.Interface;
 using Shared.Models;
 
@@ -7,7 +6,7 @@ namespace Shared.Services;
 
 public class ContactService(IContactRepository contactRepository) : IContactService
 {
-    private List<ContactObjects> _contacts = [];
+    public List<ContactObjects> Contacts { get; private set; } = [];
 
     public bool AddContact(ContactObjects contact)
     {
@@ -26,8 +25,8 @@ public class ContactService(IContactRepository contactRepository) : IContactServ
                 return false;
             }
                 
-            _contacts.Add(contact);
-            contactRepository.SaveContacts(_contacts);
+            Contacts.Add(contact);
+            contactRepository.SaveContacts(Contacts);
             return true;
         }
         catch (Exception ex)
@@ -59,8 +58,8 @@ public class ContactService(IContactRepository contactRepository) : IContactServ
     {
         try
         {
-            _contacts = contactRepository.GetContacts() ?? [];
-            return _contacts;
+            Contacts = contactRepository.GetContacts() ?? [];
+            return Contacts;
         }
         catch (Exception ex)
         {

@@ -19,7 +19,7 @@ public class ContactService_Tests
     public void AddContact_ShouldReturnTrue_WhenSuccess()
     {
         // arrange
-        var contact = new ContactObjects("abcd1234","Pelle", "Svanslös", "pelle@domain.com", "123456789");
+        var contact = new ContactObjects("abcd1234","Pelle", "Svanslös", "pelle@domain.com", "123456789", "Gatan 1", "123 45", "Stockholm");
         _contactRepositoryMock.Setup(x => x.SaveContacts(It.IsAny<List<ContactObjects>>())).Returns(true);
 
         // act
@@ -35,8 +35,8 @@ public class ContactService_Tests
         // arange
         var expectedContacts = new List<ContactObjects>
         {
-            new("abcd1234", "Pelle", "Svanslös", "pelle@domain.com", "123456789"),
-            new("1234abcd", "Lille", "Skutt", "skutt@domain.com", "987654321")
+            new("abcd1234", "Pelle", "Svanslös", "pelle@domain.com", "123456789", "Gatan 1", "123 45", "Stockholm"),
+            new("1234abcd", "Lille", "Skutt", "skutt@domain.com", "987654321", "Vägen 1", "54 321", "Göteborg")
         };
         _contactRepositoryMock.Setup(c => c.GetContacts()).Returns(expectedContacts);
 
@@ -54,7 +54,7 @@ public class ContactService_Tests
     public void GetContactById_ShouldReturnContact()
     {
         // arrange
-        var expectedContact = new ContactObjects("1234abcd", "Lille", "Skutt", "skutt@domain.com", "987654321");
+        var expectedContact = new ContactObjects("1234abcd", "Lille", "Skutt", "skutt@domain.com", "987654321", "Vägen 1", "54 321", "Göteborg");
         var contacts = new List<ContactObjects> { expectedContact };
         _contactRepositoryMock.Setup(r => r.GetContacts()).Returns(contacts);
 
@@ -68,5 +68,8 @@ public class ContactService_Tests
         Assert.Equal("Skutt", result.LastName);
         Assert.Equal("skutt@domain.com", result.Email);
         Assert.Equal("987654321", result.PhoneNumber);
+        Assert.Equal("Vägen 1", result.Address);
+        Assert.Equal("54 321", result.ZipCode);
+        Assert.Equal("Göteborg", result.City);
     }
 }

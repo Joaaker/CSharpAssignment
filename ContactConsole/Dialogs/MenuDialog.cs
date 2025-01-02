@@ -53,6 +53,8 @@ public class MenuDialog(IContactService contactService)
 
     private void AddContact()
     {
+        Console.Clear();
+
         Console.Write("Enter a first name: ");
         string firstName = Console.ReadLine()!;
 
@@ -65,9 +67,18 @@ public class MenuDialog(IContactService contactService)
         Console.Write("Enter a phone number: ");
         var phoneNumber = Console.ReadLine()!;
 
+        Console.Write("Enter a address: ");
+        var address = Console.ReadLine()!;
+
+        Console.Write("Enter a zip code: ");
+        var zipCode = Console.ReadLine()!;
+
+        Console.Write("Enter a city: ");
+        var city = Console.ReadLine()!;
+
         try
         {
-            var newContact = ContactFactory.CreateContact(firstName, lastName, email, phoneNumber);
+            var newContact = ContactFactory.CreateContact(firstName, lastName, email, phoneNumber, address, zipCode, city);
             _contactService.AddContact(newContact);
             Console.WriteLine("contact added successfully!");
         }
@@ -94,6 +105,7 @@ public class MenuDialog(IContactService contactService)
                 Console.WriteLine($"ID: {contact.Id}");
                 Console.WriteLine($"Name: {contact.FirstName} {contact.LastName}");
                 Console.WriteLine($"Email: {contact.Email}, Phone number: {contact.PhoneNumber}");
+                Console.WriteLine($"Address: {contact.Address}, Zip code: {contact.ZipCode}, City: {contact.City}");
                 Console.WriteLine("");
             }
 

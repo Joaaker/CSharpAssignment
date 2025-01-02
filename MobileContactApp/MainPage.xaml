@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileContactApp.MainPage"
+             
+             xmlns:viewmodels="clr-namespace:MobileContactApp.ViewModels"
+             x:DataType="{x:Type viewmodels:MainPageViewModel}"
+             
+             Title="MainPage">
+
+    
+    <ScrollView>
+        <Grid RowDefinitions="auto, auto, *" Margin="15">
+            <Label Text="Contact list"  TextColor="Black" Margin="20" Grid.Row="0"/>
+            <Button Text="Add new contact" BackgroundColor="Green"  Grid.Row="1" Command="{Binding NavigateToAddContactPageCommand}" />
+            <CollectionView Grid.Row="2">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <HorizontalStackLayout>
+                            <Label Text="Bind first name here"/>
+                            <Label Text="Bind last name here" Margin="20" FontSize="Large"/>
+                        </HorizontalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </ScrollView>
+</ContentPage>
