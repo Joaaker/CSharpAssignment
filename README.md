@@ -1,4 +1,6 @@
-Detta repository innehåller första verisonen av inlämningsuppgiften för kursen C#. Ursprungligen utvecklades applikationen med .NET MAUI men jag bytte till WPF. Här är den färdiga inlämningsuppgift med WPF: https://github.com/Joaaker/CSharpAssignmentWithWPF
+Detta repository innehåller första verisonen av inlämningsuppgiften för kursen C#. Ursprungligen utvecklades applikationen med .NET MAUI men jag bytte till WPF. Här är den färdiga inlämningsuppgiften med WPF: https://github.com/Joaaker/CSharpAssignmentWithWPF
+
+
 
 
 Introduktion
